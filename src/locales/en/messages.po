@@ -306,6 +306,10 @@ msgstr "Terms"
 msgid "Maximum available to borrow"
 msgstr "Maximum available to borrow"
 
+#: src/components/infoTooltips/EthenaAirdropTooltip.tsx
+msgid "This asset is eligible for Sats. Aave Labs does not guarantee the program and accepts no liability."
+msgstr "This asset is eligible for Sats. Aave Labs does not guarantee the program and accepts no liability."
+
 #: src/modules/reserve-overview/Gho/GhoDiscountCalculator.tsx
 msgid "Minimum GHO borrow amount"
 msgstr "Minimum GHO borrow amount"
@@ -578,6 +582,10 @@ msgstr "Staking balance"
 #: src/modules/governance/proposal/VotingResults.tsx
 msgid "Quorum"
 msgstr "Quorum"
+
+#: src/components/infoTooltips/EthenaAirdropTooltip.tsx
+msgid "Learn more about Ethena Stats program"
+msgstr "Learn more about Ethena Stats program"
 
 #: src/modules/governance/proposal/VotingResults.tsx
 msgid "Current votes"
@@ -1868,10 +1876,6 @@ msgstr "We couldn't find any assets related to your search. Try again with a dif
 msgid "enabled"
 msgstr "enabled"
 
-#: src/components/infoTooltips/EthenaAirdropTooltip.tsx
-msgid "Learn more about Ethena program"
-msgstr "Learn more about Ethena program"
-
 #: src/components/transactions/Bridge/BridgeDestinationInput.tsx
 msgid "Enter a valid address"
 msgstr "Enter a valid address"
@@ -1932,10 +1936,6 @@ msgstr "Eligible for the Merit program."
 #: src/components/Warnings/CooldownWarning.tsx
 msgid "Cooldown period warning"
 msgstr "Cooldown period warning"
-
-#: src/components/infoTooltips/EthenaAirdropTooltip.tsx
-msgid "This asset is eligible for Ethena incentive program. Aave Labs does not guarantee the program and accepts no liability."
-msgstr "This asset is eligible for Ethena incentive program. Aave Labs does not guarantee the program and accepts no liability."
 
 #: src/components/incentives/ZkSyncIgniteIncentivesTooltipContent.tsx
 msgid "ZKSync Ignite Program rewards are claimed through the"

@@ -13,12 +13,12 @@ export const EthenaAirdropTooltip = () => {
     >
       <>
         <Trans>
-          {`This asset is eligible for Ethena incentive program. Aave Labs does not
+          {`This asset is eligible for Sats. Aave Labs does not
           guarantee the program and accepts no liability.\n`}
         </Trans>
         <br />
         <br />
-        <Trans>{'Learn more about Ethena program'}</Trans>{' '}
+        <Trans>{'Learn more about Ethena Stats program'}</Trans>{' '}
         <Link
           href="https://app.ethena.fi/liquidity"
           sx={{ textDecoration: 'underline' }}

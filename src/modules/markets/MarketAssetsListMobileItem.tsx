@@ -1,6 +1,7 @@
 import { ProtocolAction } from '@aave/contract-helpers';
 import { Trans } from '@lingui/macro';
 import { Box, Button, Divider } from '@mui/material';
+import { EthenaAirdropTooltip } from 'src/components/infoTooltips/EthenaAirdropTooltip';
 import { SpkAirdropTooltip } from 'src/components/infoTooltips/SpkAirdropTooltip';
 import { SuperFestTooltip } from 'src/components/infoTooltips/SuperFestTooltip';
 import { VariableAPYTooltip } from 'src/components/infoTooltips/VariableAPYTooltip';
@@ -74,6 +75,7 @@ export const MarketAssetsListMobileItem = ({ ...reserve }: ComputedReserveData) 
             <>
               {externalIncentivesTooltipsSupplySide.superFestRewards && <SuperFestTooltip />}
               {externalIncentivesTooltipsSupplySide.spkAirdrop && <SpkAirdropTooltip />}
+              {externalIncentivesTooltipsSupplySide.ethenaAirdrop && <EthenaAirdropTooltip />}
             </>
           }
           market={currentMarket}

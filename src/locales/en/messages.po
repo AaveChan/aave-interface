@@ -583,10 +583,6 @@ msgstr "Staking balance"
 msgid "Quorum"
 msgstr "Quorum"
 
-#: src/components/infoTooltips/EthenaAirdropTooltip.tsx
-msgid "Learn more about Ethena Stats program"
-msgstr "Learn more about Ethena Stats program"
-
 #: src/modules/governance/proposal/VotingResults.tsx
 msgid "Current votes"
 msgstr "Current votes"
@@ -1427,6 +1423,10 @@ msgstr "This action will reduce V2 health factor below liquidation threshold. re
 #: src/components/transactions/FlowCommons/ApprovalMethodToggleButton.tsx
 msgid "{currentMethod}"
 msgstr "{currentMethod}"
+
+#: src/components/infoTooltips/EthenaAirdropTooltip.tsx
+msgid "Learn more about Ethena Sats program"
+msgstr "Learn more about Ethena Sats program"
 
 #: src/modules/bridge/BridgeTransactionListItem.tsx
 msgid "View TX"

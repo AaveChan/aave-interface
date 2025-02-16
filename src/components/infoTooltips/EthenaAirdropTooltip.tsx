@@ -20,7 +20,7 @@ export const EthenaAirdropTooltip = () => {
         <br />
         <Trans>{'Learn more about Ethena Stats program'}</Trans>{' '}
         <Link
-          href="https://app.ethena.fi/liquidity"
+          href="https://app.ethena.fi/join"
           sx={{ textDecoration: 'underline' }}
           variant="caption"
           color="text.secondary"

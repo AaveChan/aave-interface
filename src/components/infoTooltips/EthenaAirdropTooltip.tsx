@@ -18,7 +18,7 @@ export const EthenaAirdropTooltip = () => {
         </Trans>
         <br />
         <br />
-        <Trans>{'Learn more about Ethena Stats program'}</Trans>{' '}
+        <Trans>{'Learn more about Ethena Sats program'}</Trans>{' '}
         <Link
           href="https://app.ethena.fi/join"
           sx={{ textDecoration: 'underline' }}

@@ -78,6 +78,7 @@ export const roundToTokenDecimals = (inputValue: string, tokenDecimals: number) 
 export type ExternalIncentivesTooltipsConfig = {
   superFestRewards: boolean;
   spkAirdrop: boolean;
+  ethenaAirdrop: boolean;
 };
 
 export const showExternalIncentivesTooltip = (
@@ -87,10 +88,12 @@ export const showExternalIncentivesTooltip = (
 ) => {
   const superFestRewardsEnabled = false;
   const spkRewardsEnabled = true;
+  const ethenaRewardsEnabled = true;
 
   const tooltipsConfig: ExternalIncentivesTooltipsConfig = {
     superFestRewards: false,
     spkAirdrop: false,
+    ethenaAirdrop: false,
   };
 
   if (
@@ -109,6 +112,15 @@ export const showExternalIncentivesTooltip = (
     symbol == 'USDS'
   ) {
     tooltipsConfig.spkAirdrop = true;
+  }
+
+  if (
+    ethenaRewardsEnabled &&
+    protocolAction === ProtocolAction.supply &&
+    ((currentMarket === CustomMarket.proto_mainnet_v3 && (symbol == 'USDe' || symbol == 'sUSDe')) ||
+      (currentMarket === CustomMarket.proto_lido_v3 && symbol == 'sUSDe'))
+  ) {
+    tooltipsConfig.ethenaAirdrop = true;
   }
 
   return tooltipsConfig;

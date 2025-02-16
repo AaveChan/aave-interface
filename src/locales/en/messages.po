@@ -306,6 +306,10 @@ msgstr "Terms"
 msgid "Maximum available to borrow"
 msgstr "Maximum available to borrow"
 
+#: src/components/infoTooltips/EthenaAirdropTooltip.tsx
+msgid "This asset is eligible for Sats. Aave Labs does not guarantee the program and accepts no liability."
+msgstr "This asset is eligible for Sats. Aave Labs does not guarantee the program and accepts no liability."
+
 #: src/modules/reserve-overview/Gho/GhoDiscountCalculator.tsx
 msgid "Minimum GHO borrow amount"
 msgstr "Minimum GHO borrow amount"
@@ -1419,6 +1423,10 @@ msgstr "This action will reduce V2 health factor below liquidation threshold. re
 #: src/components/transactions/FlowCommons/ApprovalMethodToggleButton.tsx
 msgid "{currentMethod}"
 msgstr "{currentMethod}"
+
+#: src/components/infoTooltips/EthenaAirdropTooltip.tsx
+msgid "Learn more about Ethena Sats program"
+msgstr "Learn more about Ethena Sats program"
 
 #: src/modules/bridge/BridgeTransactionListItem.tsx
 msgid "View TX"

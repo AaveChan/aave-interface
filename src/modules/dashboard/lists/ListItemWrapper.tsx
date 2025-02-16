@@ -1,6 +1,7 @@
 import { Tooltip, Typography } from '@mui/material';
 import { ReactNode } from 'react';
 import { BorrowDisabledToolTip } from 'src/components/infoTooltips/BorrowDisabledToolTip';
+import { EthenaAirdropTooltip } from 'src/components/infoTooltips/EthenaAirdropTooltip';
 import { OffboardingTooltip } from 'src/components/infoTooltips/OffboardingToolTip';
 import { PausedTooltip } from 'src/components/infoTooltips/PausedTooltip';
 import { SpkAirdropTooltip } from 'src/components/infoTooltips/SpkAirdropTooltip';
@@ -54,6 +55,7 @@ export const ListItemWrapper = ({
   showExternalIncentivesTooltips = {
     superFestRewards: false,
     spkAirdrop: false,
+    ethenaAirdrop: false,
   },
   ...rest
 }: ListItemWrapperProps) => {
@@ -93,6 +95,7 @@ export const ListItemWrapper = ({
         {paused && <PausedTooltip />}
         {showExternalIncentivesTooltips.superFestRewards && <SuperFestTooltip />}
         {showExternalIncentivesTooltips.spkAirdrop && <SpkAirdropTooltip />}
+        {showExternalIncentivesTooltips.ethenaAirdrop && <EthenaAirdropTooltip />}
         {showFrozenTooltip && <FrozenTooltip symbol={symbol} currentMarket={currentMarket} />}
         {showRenFilTooltip && <RenFILToolTip />}
         {showAmplTooltip && <AMPLToolTip />}

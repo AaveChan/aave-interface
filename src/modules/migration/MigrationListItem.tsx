@@ -14,6 +14,7 @@ import { TokenIcon } from 'src/components/primitives/TokenIcon';
 import { ComputedUserReserveData } from 'src/hooks/app-data-provider/useAppDataProvider';
 import { useRootStore } from 'src/store/root';
 import { MigrationDisabled, V3Rates } from 'src/store/v3MigrationSelectors';
+import { useShallow } from 'zustand/shallow';
 
 import { MigrationListItemToggler } from './MigrationListItemToggler';
 import { MigrationListMobileItem } from './MigrationListMobileItem';
@@ -55,7 +56,9 @@ export const MigrationListItem = ({
   isSupplyList,
 }: MigrationListItemProps) => {
   const theme = useTheme();
-  const { currentMarket, currentMarketData } = useRootStore();
+  const [currentMarket, currentMarketData] = useRootStore(
+    useShallow((store) => [store.currentMarket, store.currentMarketData])
+  );
   const isMobile = useMediaQuery(theme.breakpoints.down(1125));
 
   const baseColor = disabled === undefined ? 'text.primary' : 'text.muted';
@@ -159,13 +162,14 @@ export const MigrationListItem = ({
         </ListColumn>
 
         <ListColumn>
-          <Box sx={{ display: 'flex' }}>
+          <Box sx={{ display: 'flex', alignItems: 'center' }}>
             <IncentivesCard
               value={v2APY}
               symbol={userReserve.reserve.symbol}
               incentives={v2Incentives}
               variant="main14"
               color={baseColor}
+              market={currentMarket}
             />
             <SvgIcon sx={{ px: 1.5 }}>
               <ArrowNarrowRightIcon
@@ -181,6 +185,7 @@ export const MigrationListItem = ({
               incentives={v3Incentives}
               variant="main14"
               color={baseColor}
+              market={currentMarket}
             />
           </Box>
         </ListColumn>

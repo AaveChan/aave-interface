@@ -2,15 +2,15 @@ import { ProtocolAction } from '@aave/contract-helpers';
 import { ReserveIncentiveResponse } from '@aave/math-utils/dist/esm/formatters/incentive/calculate-reserve-incentives';
 import { Trans } from '@lingui/macro';
 import { Box, Button, useMediaQuery, useTheme } from '@mui/material';
-import { MeritIncentivesButton } from 'src/components/incentives/IncentivesButton';
 import { IncentivesCard } from 'src/components/incentives/IncentivesCard';
 import { Row } from 'src/components/primitives/Row';
 import { useAssetCaps } from 'src/hooks/useAssetCaps';
 import { useModalContext } from 'src/hooks/useModal';
-import { useProtocolDataContext } from 'src/hooks/useProtocolDataContext';
+import { useRootStore } from 'src/store/root';
 import { DashboardReserve } from 'src/utils/dashboardSortUtils';
 import { isFeatureEnabled } from 'src/utils/marketsAndNetworksConfig';
 import { showExternalIncentivesTooltip } from 'src/utils/utils';
+import { useShallow } from 'zustand/shallow';
 
 import { ListAPRColumn } from '../ListAPRColumn';
 import { ListButtonsColumn } from '../ListButtonsColumn';
@@ -25,7 +25,9 @@ export const BorrowedPositionsListItem = ({
   disableEModeSwitch,
 }: BorrowedPositionsListItemWrapperProps) => {
   const { borrowCap } = useAssetCaps();
-  const { currentMarket, currentMarketData } = useProtocolDataContext();
+  const [currentMarket, currentMarketData] = useRootStore(
+    useShallow((state) => [state.currentMarket, state.currentMarketData])
+  );
   const theme = useTheme();
   const downToXSM = useMediaQuery(theme.breakpoints.down('xsm'));
   const { openBorrow, openRepay, openDebtSwitch } = useModalContext();
@@ -100,12 +102,13 @@ const BorrowedPositionsListItemDesktop = ({
   totalBorrows,
   totalBorrowsUSD,
   borrowAPY,
+  variableDebtTokenAddress,
   incentives,
   onDetbSwitchClick,
   onOpenBorrow,
   onOpenRepay,
 }: BorrowedPositionsListItemProps) => {
-  const { currentMarket } = useProtocolDataContext();
+  const currentMarket = useRootStore((state) => state.currentMarket);
 
   return (
     <ListItemWrapper
@@ -131,6 +134,7 @@ const BorrowedPositionsListItemDesktop = ({
         value={borrowAPY}
         market={currentMarket}
         protocolAction={ProtocolAction.borrow}
+        address={variableDebtTokenAddress}
         incentives={incentives}
         symbol={reserve.symbol}
       />
@@ -167,12 +171,13 @@ const BorrowedPositionsListItemMobile = ({
   disableSwitch,
   borrowAPY,
   incentives,
+  variableDebtTokenAddress,
   disableRepay,
   onDetbSwitchClick,
   onOpenBorrow,
   onOpenRepay,
 }: BorrowedPositionsListItemProps) => {
-  const { currentMarket } = useProtocolDataContext();
+  const currentMarket = useRootStore((state) => state.currentMarket);
 
   const { symbol, iconSymbol, name } = reserve;
 
@@ -200,19 +205,15 @@ const BorrowedPositionsListItemMobile = ({
       />
 
       <Row caption={<Trans>APY</Trans>} align="flex-start" captionVariant="description" mb={2}>
-        <Box sx={{ display: 'flex', flexDirection: 'column' }}>
-          <IncentivesCard
-            value={borrowAPY}
-            incentives={incentives}
-            symbol={symbol}
-            variant="secondary14"
-          />
-          <MeritIncentivesButton
-            symbol={symbol}
-            market={currentMarket}
-            protocolAction={ProtocolAction.borrow}
-          />
-        </Box>
+        <IncentivesCard
+          value={borrowAPY}
+          incentives={incentives}
+          address={variableDebtTokenAddress}
+          symbol={symbol}
+          variant="secondary14"
+          market={currentMarket}
+          protocolAction={ProtocolAction.borrow}
+        />
       </Row>
 
       <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', mt: 5 }}>

@@ -102,7 +102,9 @@ export const EthenaIncentivesButton = ({ rewardedAsset }: { rewardedAsset?: stri
   const [open, setOpen] = useState(false);
   const points = useEthenaIncentives(rewardedAsset);
 
-  if (!points) {
+  const incentivesEnabled = true;
+
+  if (!points || !incentivesEnabled) {
     return null;
   }
 

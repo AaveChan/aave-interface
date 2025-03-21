@@ -102,7 +102,9 @@ export const EthenaIncentivesButton = ({ rewardedAsset }: { rewardedAsset?: stri
   const [open, setOpen] = useState(false);
   const points = useEthenaIncentives(rewardedAsset);
 
-  if (!points) {
+  const incentivesEnabled = Date.now() < new Date('03-23-2025').getTime(); // End of season 3
+
+  if (!points || !incentivesEnabled) {
     return null;
   }
 

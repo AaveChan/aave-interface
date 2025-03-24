@@ -102,13 +102,15 @@ export const EthenaIncentivesButton = ({ rewardedAsset }: { rewardedAsset?: stri
   const [open, setOpen] = useState(false);
   const points = useEthenaIncentives(rewardedAsset);
 
-  if (!points) {
+  const incentivesEnabled = Date.now() < new Date('09-23-2025').getTime(); // End of season 4
+
+  if (!points || !incentivesEnabled) {
     return null;
   }
 
   return (
     <ContentWithTooltip
-      tooltipContent={<EthenaAirdropTooltipContent points={points} />}
+      tooltipContent={<EthenaAirdropTooltipContent points={points} rewardedAsset={rewardedAsset} />}
       withoutHover
       setOpen={setOpen}
       open={open}

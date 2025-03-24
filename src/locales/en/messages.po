@@ -130,10 +130,6 @@ msgstr "Collateral change"
 msgid "This is the total amount that you are able to supply to in this reserve. You are able to supply your wallet balance up until the supply cap is reached."
 msgstr "This is the total amount that you are able to supply to in this reserve. You are able to supply your wallet balance up until the supply cap is reached."
 
-#: src/components/incentives/EthenaIncentivesTooltipContent.tsx
-msgid "This asset is eligible for {0} Ethena Rewards."
-msgstr "This asset is eligible for {0} Ethena Rewards."
-
 #: src/modules/history/PriceUnavailable.tsx
 msgid "Price data is not currently available for this reserve on the protocol subgraph"
 msgstr "Price data is not currently available for this reserve on the protocol subgraph"
@@ -2727,6 +2723,10 @@ msgstr "Your health factor and loan to value determine the assurance of your col
 #: src/ui-config/errorMapping.tsx
 msgid "AToken supply is not zero"
 msgstr "AToken supply is not zero"
+
+#: src/components/incentives/EthenaIncentivesTooltipContent.tsx
+msgid "This asset is eligible for {0} Ethena Rewards{1}."
+msgstr "This asset is eligible for {0} Ethena Rewards{1}."
 
 #: src/components/transactions/DebtSwitch/DebtSwitchModalContent.tsx
 msgid "Borrow APY"

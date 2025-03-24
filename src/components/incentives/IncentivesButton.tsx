@@ -110,7 +110,7 @@ export const EthenaIncentivesButton = ({ rewardedAsset }: { rewardedAsset?: stri
 
   return (
     <ContentWithTooltip
-      tooltipContent={<EthenaAirdropTooltipContent points={points} />}
+      tooltipContent={<EthenaAirdropTooltipContent points={points} rewardedAsset={rewardedAsset} />}
       withoutHover
       setOpen={setOpen}
       open={open}

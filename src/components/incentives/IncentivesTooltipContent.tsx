@@ -88,6 +88,11 @@ const IncentivesSymbolMap: {
     symbol: 'aweETH',
     aToken: true,
   },
+  aCelCELO: {
+    tokenIconSymbol: 'CELO',
+    symbol: 'aCELO',
+    aToken: true,
+  },
 };
 
 interface IncentivesTooltipContentProps {

@@ -23,7 +23,6 @@ interface CampaignConfig {
   hasSpecialContent: boolean;
 }
 
-// const ENABLE_SAFE_CAMPAIGN = false;
 const ENABLE_SAFE_CAMPAIGN = true;
 
 const isCeloAction = (action: MeritAction): boolean => {

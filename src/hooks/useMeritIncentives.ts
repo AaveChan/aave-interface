@@ -673,13 +673,14 @@ export const MERIT_DATA_MAP: Record<string, Record<string, MeritReserveIncentive
         protocolAction: ProtocolAction.supply,
         customMessage: antiLoopMessage,
       },
-      {
-        action: MeritAction.CELO_SUPPLY_MULTIPLE_BORROW_USDT,
-        rewardTokenAddress: AaveV3Celo.ASSETS.CELO.A_TOKEN,
-        rewardTokenSymbol: 'aCelCELO',
-        protocolAction: ProtocolAction.supply,
-        customMessage: celoSupplyMultipleBorrowUsdtMessage,
-      },
+      // To re-enable when you support 2 incentive
+      // {
+      //   action: MeritAction.CELO_SUPPLY_MULTIPLE_BORROW_USDT,
+      //   rewardTokenAddress: AaveV3Celo.ASSETS.CELO.A_TOKEN,
+      //   rewardTokenSymbol: 'aCelCELO',
+      //   protocolAction: ProtocolAction.supply,
+      //   customMessage: celoSupplyMultipleBorrowUsdtMessage,
+      // },
       {
         action: MeritAction.CELO_BORROW_WETH,
         rewardTokenAddress: AaveV3Celo.ASSETS.CELO.A_TOKEN,
